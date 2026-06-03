@@ -88,27 +88,39 @@ function Hero() {
           <div className="absolute bottom-0 w-[80%] h-[60%] bg-white/60 backdrop-blur-3xl rounded-t-full -z-10"></div>
 
           {/* Card 1: Top Left */}
-          <div className="absolute top-16 left-0 md:left-10 bg-[#8b5cf6] w-[170px] h-[140px] p-5 rounded-2xl shadow-2xl z-20 text-white flex flex-col justify-center float-1">
+          <div className="absolute top-[5%] md:top-[10%] left-0 md:left-6 bg-[#8b5cf6] w-[170px] h-[140px] p-5 rounded-2xl shadow-2xl z-20 text-white flex flex-col justify-center float-1">
             <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '28px' }}>functions</span>
             <div className="font-bold text-sm leading-snug">Formula Sheets for Quick Revisions</div>
           </div>
           
           {/* Card 2: Top Right */}
-          <div className="absolute top-8 right-0 md:right-10 bg-[#ff8fa3] w-[170px] h-[140px] p-5 rounded-2xl shadow-2xl z-20 text-white flex flex-col justify-center float-2 rotate-2">
+          <div className="absolute top-[2%] md:top-[5%] right-0 md:right-6 bg-[#ff8fa3] w-[170px] h-[140px] p-5 rounded-2xl shadow-2xl z-20 text-white flex flex-col justify-center float-2 rotate-2">
             <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '28px' }}>quiz</span>
             <div className="font-bold text-sm leading-snug">Mock Tests</div>
           </div>
           
           {/* Card 3: Bottom Left */}
-          <div className="absolute bottom-24 left-4 md:-left-4 bg-[#e14f6b] w-[170px] h-[140px] p-5 rounded-2xl shadow-2xl z-20 text-white flex flex-col justify-center float-3 -rotate-3">
+          <div className="absolute top-[75%] md:top-[80%] left-4 md:left-10 bg-[#e14f6b] w-[170px] h-[140px] p-5 rounded-2xl shadow-2xl z-20 text-white flex flex-col justify-center float-3 -rotate-3">
              <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '28px' }}>draw</span>
              <div className="font-bold text-sm leading-snug">Handwritten Notes for All Chapters</div>
           </div>
           
           {/* Card 4: Bottom Right */}
-          <div className="absolute bottom-16 right-0 md:right-4 bg-[#3b82f6] w-[170px] h-[140px] p-5 rounded-2xl shadow-2xl z-20 text-white flex flex-col justify-center float-4">
+          <div className="absolute top-[72%] md:top-[75%] right-0 md:right-10 bg-[#3b82f6] w-[170px] h-[140px] p-5 rounded-2xl shadow-2xl z-20 text-white flex flex-col justify-center float-4">
             <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '28px' }}>forum</span>
             <div className="font-bold text-sm leading-snug">Live Doubt Solving Support</div>
+          </div>
+
+          {/* Card 5: Middle Left */}
+          <div className="absolute top-[40%] md:top-[45%] -left-8 md:-left-24 bg-[#10b981] w-[160px] h-[140px] p-5 rounded-2xl shadow-xl z-20 text-white flex flex-col justify-center float-2 -rotate-2">
+            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '28px' }}>hub</span>
+            <div className="font-bold text-sm leading-snug">Mind Maps for All Chapters</div>
+          </div>
+          
+          {/* Card 6: Middle Right */}
+          <div className="absolute top-[37%] md:top-[40%] -right-4 md:-right-24 bg-[#f59e0b] w-[160px] h-[140px] p-5 rounded-2xl shadow-xl z-20 text-white flex flex-col justify-center float-1 rotate-3">
+            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '28px' }}>menu_book</span>
+            <div className="font-bold text-sm leading-snug">Comprehensive Study Materials</div>
           </div>
 
         </div>
