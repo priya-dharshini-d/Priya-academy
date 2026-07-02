@@ -5,36 +5,84 @@ import Catalog from "./Catalog";
 /* ─── Nav ─────────────────────────────────────────────── */
 function Nav({ setView }) {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
-  return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-white border-b border-zinc-200" : "bg-transparent"}`}>
-      <div className="max-w-[1440px] mx-auto px-8 md:px-12 flex items-center justify-between h-16">
-        
-        {/* Logo Section */}
-        <div className="flex flex-col justify-center cursor-pointer" onClick={() => setView && setView('home')}>
-          <span className="font-serif text-xl leading-none text-zinc-900 tracking-tight">Priya's Academy</span>
-        </div>
 
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
-          {[
-            { name: "Home", id: "#" },
-            { name: "Courses", id: "#courses" },
-            { name: "Methodology", id: "#methodology" },
-            { name: "About Us", id: "#about" },
-            { name: "Testimonials", id: "#testimonials" },
-            { name: "FAQs", id: "#faqs" },
-            { name: "Contact Us", id: "#contact" },
-          ].map((l) => (
-            <a key={l.name} href={l.id} onClick={() => setView && setView('home')} className="text-[10px] uppercase tracking-widest font-medium text-zinc-500 hover:text-zinc-900 transition-colors">{l.name}</a>
-          ))}
+  const navLinks = [
+    { name: "Home", id: "#" },
+    { name: "Courses", id: "#courses" },
+    { name: "Methodology", id: "#methodology" },
+    { name: "About Us", id: "#about" },
+    { name: "Testimonials", id: "#testimonials" },
+    { name: "FAQs", id: "#faqs" },
+    { name: "Contact Us", id: "#contact" },
+  ];
+
+  return (
+    <>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-white border-b border-zinc-200" : "bg-transparent"}`}>
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-12 flex items-center justify-between h-16">
+
+          {/* Logo Section */}
+          <div className="flex flex-col justify-center cursor-pointer" onClick={() => { setView && setView('home'); setMobileOpen(false); }}>
+            <span className="font-serif text-lg sm:text-xl leading-none text-zinc-900 tracking-tight">Priya's Academy</span>
+          </div>
+
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+            {navLinks.map((l) => (
+              <a key={l.name} href={l.id} onClick={() => setView && setView('home')} className="text-[10px] uppercase tracking-widest font-medium text-zinc-500 hover:text-zinc-900 transition-colors">{l.name}</a>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-3">
+            <a href="#demo" className="hidden sm:inline-block bg-zinc-900 text-white px-5 py-2 text-xs font-bold uppercase tracking-widest hover:bg-zinc-700 transition-colors">Book Demo</a>
+            {/* Hamburger button - visible on mobile/tablet */}
+            <button
+              className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+            >
+              <span className={`block w-6 h-0.5 bg-zinc-900 transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`block w-6 h-0.5 bg-zinc-900 transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`block w-6 h-0.5 bg-zinc-900 transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            </button>
+          </div>
         </div>
-        <a href="#demo" className="bg-zinc-900 text-white px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-zinc-700 transition-colors inline-block">Book Demo</a>
+      </nav>
+
+      {/* Mobile Menu Overlay */}
+      {mobileOpen && (
+        <div className="fixed inset-0 z-40 bg-black/30 lg:hidden" onClick={() => setMobileOpen(false)} />
+      )}
+
+      {/* Mobile Menu Drawer */}
+      <div className={`fixed top-0 right-0 z-[45] h-full w-72 bg-white shadow-2xl transform transition-transform duration-300 lg:hidden ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="pt-20 px-6 flex flex-col gap-1">
+          {navLinks.map((l) => (
+            <a
+              key={l.name}
+              href={l.id}
+              onClick={() => { setView && setView('home'); setMobileOpen(false); }}
+              className="py-3 text-sm font-medium text-zinc-700 hover:text-zinc-900 border-b border-zinc-100 transition-colors"
+            >
+              {l.name}
+            </a>
+          ))}
+          <a
+            href="#demo"
+            onClick={() => setMobileOpen(false)}
+            className="mt-4 bg-zinc-900 text-white px-5 py-3 text-xs font-bold uppercase tracking-widest hover:bg-zinc-700 transition-colors text-center"
+          >
+            Book Demo
+          </a>
+        </div>
       </div>
-    </nav>
+    </>
   );
 }
 
@@ -59,9 +107,9 @@ function Hero() {
           letter-spacing: 0.02em;
         }
       `}</style>
-      
+
       <div className="max-w-[1280px] mx-auto px-8 w-full flex flex-col items-center relative z-10">
-        
+
         {/* Text Content */}
         <h1 className="hero-title text-[#111] text-center uppercase mt-6 mb-4" style={{ fontSize: "clamp(36px, 5vw, 72px)", lineHeight: "1" }}>
           MASTER MATHEMATICS
@@ -69,58 +117,58 @@ function Hero() {
         <p className="mt-6 text-zinc-700 text-sm md:text-base max-w-4xl text-center font-medium">
           Expert online math tutoring tailored to simplify concepts, build confidence, and boost your scores.
         </p>
-        
+
         {/* Buttons */}
         <div className="flex items-center gap-4 mt-8 mb-16">
           <button className="bg-[#e14f6b] text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg hover:bg-[#c93f5a] transition-colors">Enroll Now</button>
           <button className="border border-zinc-400/60 bg-white/50 backdrop-blur-sm text-zinc-800 px-8 py-3 rounded-full text-sm font-bold hover:bg-white/80 transition-colors">Watch a Class</button>
         </div>
-        
+
         {/* Image & Floating Cards Area */}
         <div className="relative w-full max-w-4xl flex justify-center mt-6">
-          
+
           {/* Main Image */}
           <div className="w-[300px] md:w-[450px] h-[400px] md:h-[550px] overflow-hidden relative z-10 flex items-end justify-center rounded-t-full border-[6px] border-white shadow-2xl bg-[#e0e7ff]">
-             <img src="/student_hero_uniform.png" className="w-full h-full object-cover" alt="Student in Uniform" />
+            <img src="/student_hero_uniform.png" className="w-full h-full object-cover" alt="Student in Uniform" />
           </div>
-          
+
           {/* Background decoration semi-circle */}
           <div className="absolute bottom-0 w-[80%] h-[60%] bg-white/60 backdrop-blur-3xl rounded-t-full -z-10"></div>
 
           {/* Card 1: Top Left */}
-          <div className="absolute top-[5%] md:top-[10%] left-0 md:left-6 bg-[#8b5cf6] w-[170px] h-[140px] p-5 rounded-2xl shadow-2xl z-20 text-white flex flex-col justify-center float-1">
-            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '28px' }}>functions</span>
-            <div className="font-bold text-sm leading-snug">Formula Sheets for Quick Revisions</div>
-          </div>
-          
-          {/* Card 2: Top Right */}
-          <div className="absolute top-[2%] md:top-[5%] right-0 md:right-6 bg-[#ff8fa3] w-[170px] h-[140px] p-5 rounded-2xl shadow-2xl z-20 text-white flex flex-col justify-center float-2 rotate-2">
-            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '28px' }}>quiz</span>
-            <div className="font-bold text-sm leading-snug">Mock Tests</div>
-          </div>
-          
-          {/* Card 3: Bottom Left */}
-          <div className="absolute top-[75%] md:top-[80%] left-4 md:left-10 bg-[#e14f6b] w-[170px] h-[140px] p-5 rounded-2xl shadow-2xl z-20 text-white flex flex-col justify-center float-3 -rotate-3">
-             <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '28px' }}>draw</span>
-             <div className="font-bold text-sm leading-snug">Handwritten Notes for All Chapters</div>
-          </div>
-          
-          {/* Card 4: Bottom Right */}
-          <div className="absolute top-[72%] md:top-[75%] right-0 md:right-10 bg-[#3b82f6] w-[170px] h-[140px] p-5 rounded-2xl shadow-2xl z-20 text-white flex flex-col justify-center float-4">
-            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '28px' }}>forum</span>
-            <div className="font-bold text-sm leading-snug">Live Doubt Solving Support</div>
+          <div className="hidden sm:flex absolute top-[5%] md:top-[10%] left-0 md:left-6 bg-[#8b5cf6] w-[130px] h-[110px] md:w-[170px] md:h-[140px] p-3 md:p-5 rounded-2xl shadow-2xl z-20 text-white flex-col justify-center float-1">
+            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '24px' }}>functions</span>
+            <div className="font-bold text-xs md:text-sm leading-snug">Formula Sheets for Quick Revisions</div>
           </div>
 
-          {/* Card 5: Middle Left */}
-          <div className="absolute top-[40%] md:top-[45%] -left-8 md:-left-24 bg-[#10b981] w-[160px] h-[140px] p-5 rounded-2xl shadow-xl z-20 text-white flex flex-col justify-center float-2 -rotate-2">
-            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '28px' }}>hub</span>
-            <div className="font-bold text-sm leading-snug">Mind Maps for All Chapters</div>
+          {/* Card 2: Top Right */}
+          <div className="hidden sm:flex absolute top-[2%] md:top-[5%] right-0 md:right-6 bg-[#ff8fa3] w-[130px] h-[110px] md:w-[170px] md:h-[140px] p-3 md:p-5 rounded-2xl shadow-2xl z-20 text-white flex-col justify-center float-2 rotate-2">
+            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '24px' }}>quiz</span>
+            <div className="font-bold text-xs md:text-sm leading-snug">Mock Tests</div>
           </div>
-          
-          {/* Card 6: Middle Right */}
-          <div className="absolute top-[37%] md:top-[40%] -right-4 md:-right-24 bg-[#f59e0b] w-[160px] h-[140px] p-5 rounded-2xl shadow-xl z-20 text-white flex flex-col justify-center float-1 rotate-3">
-            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '28px' }}>menu_book</span>
-            <div className="font-bold text-sm leading-snug">Comprehensive Study Materials</div>
+
+          {/* Card 3: Bottom Left */}
+          <div className="hidden sm:flex absolute top-[75%] md:top-[80%] left-4 md:left-10 bg-[#e14f6b] w-[130px] h-[110px] md:w-[170px] md:h-[140px] p-3 md:p-5 rounded-2xl shadow-2xl z-20 text-white flex-col justify-center float-3 -rotate-3">
+             <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '24px' }}>draw</span>
+             <div className="font-bold text-xs md:text-sm leading-snug">Handwritten Notes for All Chapters</div>
+          </div>
+
+          {/* Card 4: Bottom Right */}
+          <div className="hidden sm:flex absolute top-[72%] md:top-[75%] right-0 md:right-10 bg-[#3b82f6] w-[130px] h-[110px] md:w-[170px] md:h-[140px] p-3 md:p-5 rounded-2xl shadow-2xl z-20 text-white flex-col justify-center float-4">
+            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '24px' }}>forum</span>
+            <div className="font-bold text-xs md:text-sm leading-snug">Live Doubt Solving Support</div>
+          </div>
+
+          {/* Card 5: Middle Left - hidden on small screens */}
+          <div className="hidden md:flex absolute top-[45%] -left-8 lg:-left-24 bg-[#10b981] w-[140px] h-[120px] lg:w-[160px] lg:h-[140px] p-4 lg:p-5 rounded-2xl shadow-xl z-20 text-white flex-col justify-center float-2 -rotate-2">
+            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '24px' }}>hub</span>
+            <div className="font-bold text-xs md:text-sm leading-snug">Mind Maps for All Chapters</div>
+          </div>
+
+          {/* Card 6: Middle Right - hidden on small screens */}
+          <div className="hidden md:flex absolute top-[40%] -right-4 lg:-right-24 bg-[#f59e0b] w-[140px] h-[120px] lg:w-[160px] lg:h-[140px] p-4 lg:p-5 rounded-2xl shadow-xl z-20 text-white flex-col justify-center float-1 rotate-3">
+            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '24px' }}>menu_book</span>
+            <div className="font-bold text-xs md:text-sm leading-snug">Comprehensive Study Materials</div>
           </div>
 
         </div>
@@ -148,7 +196,7 @@ function Hero() {
       <svg viewBox="0 0 100 100" className="hidden lg:block absolute top-[30%] left-[12%] w-28 h-auto animate-float-slow drop-shadow-xl opacity-40" style={{ '--rotation': '-10deg' }}>
         {/* Frame */}
         <rect x="10" y="10" width="80" height="80" rx="6" fill="none" stroke="#8b5cf6" strokeWidth="8" />
-        
+
         {/* Rods */}
         <line x1="14" y1="22" x2="86" y2="22" stroke="#94a3b8" strokeWidth="3" />
         <line x1="14" y1="36" x2="86" y2="36" stroke="#94a3b8" strokeWidth="3" />
@@ -225,11 +273,11 @@ function Hero() {
 /* ─── Methodology ───────────────────────────────────────── */
 function Methodology() {
   const steps = [
-    { n: "1", title: "LEARN",  desc: "Concept video lectures and live interactive sessions." },
-    { n: "2", title: "PRACTICE", desc: "Graded assignment sheets from NCERT to Exemplar." },
-    { n: "3", title: "TEST", desc: "Bi-weekly subjective and objective mock tests." },
-    { n: "4", title: "ANALYZE", desc: "AI-generated error analysis report for each test." },
-    { n: "5", title: "IMPROVE", desc: "Remedial sessions to bridge identified knowledge gaps." },
+    { n: "1", title: "LEARN",    desc: "Concept video lectures and live interactive sessions.",  color: "#8b5cf6" },
+    { n: "2", title: "PRACTICE", desc: "Graded assignment sheets from NCERT to Exemplar.",       color: "#3b82f6" },
+    { n: "3", title: "TEST",     desc: "Bi-weekly subjective and objective mock tests.",          color: "#10b981" },
+    { n: "4", title: "ANALYZE",  desc: "AI-generated error analysis report for each test.",      color: "#f59e0b" },
+    { n: "5", title: "IMPROVE",  desc: "Remedial sessions to bridge identified knowledge gaps.", color: "#e14f6b" },
   ];
   return (
     <section id="methodology" className="py-24 bg-white border-t border-zinc-100">
@@ -237,16 +285,20 @@ function Methodology() {
         <h2 className="font-serif font-bold text-zinc-900 mb-20 text-2xl">
           The 5-Step Pedagogy
         </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
-          <div className="hidden md:block absolute top-7 left-10 right-10 h-[1px] bg-zinc-100 z-0"></div>
-          
-          {steps.map(({ n, title, desc }) => (
+
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 relative">
+          {/* Connecting line */}
+          <div className="hidden md:block absolute top-7 left-[10%] right-[10%] h-[2px] z-0 rounded-full" style={{ background: 'linear-gradient(to right, #8b5cf6, #3b82f6, #10b981, #f59e0b, #e14f6b)' }}></div>
+
+          {steps.map(({ n, title, desc, color }) => (
             <div key={n} className="flex flex-col items-center z-10">
-              <div className="w-14 h-14 bg-zinc-900 text-white flex items-center justify-center font-serif font-bold text-lg mb-8">
+              <div
+                className="w-14 h-14 text-white flex items-center justify-center font-serif font-bold text-lg mb-6 rounded-xl"
+                style={{ backgroundColor: color, boxShadow: `0 8px 24px ${color}40` }}
+              >
                 {n}
               </div>
-              <h3 className="font-sans font-medium text-zinc-600 text-sm tracking-[0.1em] mb-4">{title}</h3>
+              <h3 className="font-sans font-semibold text-zinc-800 text-xs tracking-[0.15em] uppercase mb-3">{title}</h3>
               <p className="text-sm text-zinc-500 leading-relaxed max-w-[180px] mx-auto">{desc}</p>
             </div>
           ))}
@@ -448,7 +500,7 @@ function Demo() {
 
           {/* Form */}
           <form className="space-y-5">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-[10px] uppercase tracking-widest font-medium text-zinc-400 mb-1.5">Full Name</label>
                 <input className="w-full border border-zinc-300 px-3 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 outline-none bg-white transition-colors" placeholder="John Doe" type="text" />
@@ -470,7 +522,7 @@ function Demo() {
                 <option>Board Exam Bootcamp</option>
               </select>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-[10px] uppercase tracking-widest font-medium text-zinc-400 mb-1.5">Phone</label>
                 <input className="w-full border border-zinc-300 px-3 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 outline-none bg-white transition-colors" placeholder="+91 XXXXX XXXXX" type="tel" />
@@ -500,17 +552,17 @@ function Demo() {
                 playsInline
                 className="w-full h-full object-cover grayscale"
               />
-              {/* 3D Floating Math Formulas */}
-              <div className="absolute top-10 left-[-40px] math-float-1">
+              {/* 3D Floating Math Formulas - hidden on mobile to prevent overflow */}
+              <div className="hidden md:block absolute top-10 left-[-40px] math-float-1">
                 <div className="math-card dark shadow-2xl">∑(x+y)² = n</div>
               </div>
-              <div className="absolute bottom-16 right-[-50px] math-float-2">
+              <div className="hidden md:block absolute bottom-16 right-[-50px] math-float-2">
                 <div className="math-card shadow-2xl">∫ f(x)dx</div>
               </div>
-              <div className="absolute top-[-10px] right-10 math-float-3" style={{ animationDelay: '-3s' }}>
+              <div className="hidden md:block absolute top-[-10px] right-10 math-float-3" style={{ animationDelay: '-3s' }}>
                 <div className="math-card shadow-2xl">lim(x→∞)</div>
               </div>
-              <div className="absolute bottom-[-10px] left-10 math-float-1" style={{ animationDelay: '-7s' }}>
+              <div className="hidden md:block absolute bottom-[-10px] left-10 math-float-1" style={{ animationDelay: '-7s' }}>
                 <div className="math-card dark shadow-2xl">e^(iπ) + 1 = 0</div>
               </div>
             </div>
@@ -533,7 +585,7 @@ function FAQ() {
   return (
     <section id="faqs" className="py-24 bg-white border-t border-zinc-200">
       <div className="max-w-[1280px] mx-auto px-8 md:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
           <div className="md:col-span-4">
             <p className="text-[10px] uppercase tracking-[0.15em] font-medium text-zinc-400 mb-4">Common Queries</p>
             <h2 className="font-serif font-black text-zinc-900" style={{ fontSize: "clamp(28px, 4vw, 48px)" }}>
@@ -547,11 +599,11 @@ function FAQ() {
                   className="w-full py-5 flex items-center justify-between text-left"
                   onClick={() => setOpen(open === i ? null : i)}
                 >
-                  <span className="font-sans font-bold text-zinc-900 text-base">{q}</span>
-                  <span className={`material-symbols-outlined text-zinc-400 flex-shrink-0 ml-4 transition-transform duration-300 ${open === i ? "rotate-45" : ""}`}>add</span>
+                  <span className="font-sans font-bold text-zinc-900 text-sm sm:text-base pr-2">{q}</span>
+                  <span className={`material-symbols-outlined text-zinc-400 flex-shrink-0 ml-2 sm:ml-4 transition-transform duration-300 ${open === i ? "rotate-45" : ""}`}>add</span>
                 </button>
                 <div className={`overflow-hidden transition-all duration-400 ${open === i ? "max-h-40" : "max-h-0"}`}>
-                  <p className="text-sm text-zinc-500 leading-relaxed pb-5 pr-10">{a}</p>
+                  <p className="text-sm text-zinc-500 leading-relaxed pb-5 pr-4 sm:pr-10">{a}</p>
                 </div>
               </div>
             ))}
@@ -613,7 +665,7 @@ export default function App() {
   const [currentView, setCurrentView] = useState('home');
 
   return (
-    <div className="bg-white">
+    <div className="bg-white overflow-x-hidden">
       <Nav setView={setCurrentView} />
       {currentView === 'home' ? (
         <>
