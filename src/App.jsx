@@ -315,7 +315,7 @@ function Methodology() {
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 relative">
           {/* Connecting line */}
-          <div className="hidden md:block absolute top-7 left-[10%] right-[10%] h-[2px] z-0 rounded-full" style={{ background: 'linear-gradient(to right, #8b5cf6, #3b82f6, #10b981, #f59e0b, #e14f6b)' }}></div>
+          <div className="hidden md:block absolute top-7 left-[10%] right-[10%] h-[2px] z-0 rounded-full bg-zinc-200"></div>
 
           {steps.map(({ n, title, desc, color }) => (
             <div key={n} className="flex flex-col items-center z-10">
@@ -523,8 +523,7 @@ function Demo() {
             Schedule a private consultation and tour of our digital ecosystem. Admission is selective.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Form */}
           <form className="space-y-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -568,38 +567,61 @@ function Demo() {
             </button>
           </form>
 
-          {/* Floating Video Panel */}
-          <div className="flex flex-col items-center justify-center mt-8 md:mt-0">
-            <div className="relative w-full aspect-square max-w-sm">
-              <video
-                src="/hero_video.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover grayscale"
-              />
-              {/* 3D Floating Math Formulas - hidden on mobile to prevent overflow */}
-              <div className="hidden md:block absolute top-10 left-[-40px] math-float-1">
-                <div className="math-card dark shadow-2xl">∑(x+y)² = n</div>
+          {/* Quick Contact & Academy Highlights Panel */}
+          <div className="space-y-8 lg:pl-6">
+            
+
+            {/* Highlights Box */}
+            <div className="space-y-4">
+              <h3 className="font-serif font-bold text-zinc-900 text-lg mb-4">Why Choose Priya's Academy?</h3>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-4 border border-zinc-200 rounded-xl space-y-2">
+                  <span className="material-symbols-outlined text-2xl text-[#8b5cf6]">groups</span>
+                  <h4 className="font-bold text-xs text-zinc-900 uppercase tracking-wider">Small Batches</h4>
+                  <p className="text-[11px] text-zinc-500 leading-normal">Maximum 20 students per batch to ensure dedicated personal attention.</p>
+                </div>
+
+                <div className="p-4 border border-zinc-200 rounded-xl space-y-2">
+                  <span className="material-symbols-outlined text-2xl text-[#3b82f6]">emoji_events</span>
+                  <h4 className="font-bold text-xs text-zinc-900 uppercase tracking-wider">Top Board Results</h4>
+                  <p className="text-[11px] text-zinc-500 leading-normal">Proven exam strategies to target centum (100/100) scores in CBSE boards.</p>
+                </div>
+
+                <div className="p-4 border border-zinc-200 rounded-xl space-y-2">
+                  <span className="material-symbols-outlined text-2xl text-[#10b981]">article</span>
+                  <h4 className="font-bold text-xs text-zinc-900 uppercase tracking-wider">NCERT to Exemplar</h4>
+                  <p className="text-[11px] text-zinc-500 leading-normal">Comprehensive worksheets covering every board textbook question.</p>
+                </div>
+
+                <div className="p-4 border border-zinc-200 rounded-xl space-y-2">
+                  <span className="material-symbols-outlined text-2xl text-[#f59e0b]">trending_up</span>
+                  <h4 className="font-bold text-xs text-zinc-900 uppercase tracking-wider">Parents Dashboard</h4>
+                  <p className="text-[11px] text-zinc-500 leading-normal">Regular diagnostic progress reports and metrics shared with parents.</p>
+                </div>
               </div>
-              <div className="hidden md:block absolute bottom-16 right-[-50px] math-float-2">
-                <div className="math-card shadow-2xl">∫ f(x)dx</div>
+
+            {/* Quick Stats Banner */}
+            <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-4 flex justify-around text-center">
+              <div>
+                <div className="font-sans font-black text-xl text-zinc-900">95%+</div>
+                <div className="text-[9px] uppercase tracking-wider text-zinc-400 font-medium">Board Success</div>
               </div>
-              <div className="hidden md:block absolute top-[-10px] right-10 math-float-3" style={{ animationDelay: '-3s' }}>
-                <div className="math-card shadow-2xl">lim(x→∞)</div>
+              <div className="border-r border-zinc-200 h-8 self-center"></div>
+              <div>
+                <div className="font-sans font-black text-xl text-zinc-900">200+</div>
+                <div className="text-[9px] uppercase tracking-wider text-zinc-400 font-medium">Mind Maps</div>
               </div>
-              <div className="hidden md:block absolute bottom-[-10px] left-10 math-float-1" style={{ animationDelay: '-7s' }}>
-                <div className="math-card dark shadow-2xl">e^(iπ) + 1 = 0</div>
+              <div className="border-r border-zinc-200 h-8 self-center"></div>
+              <div>
+                <div className="font-sans font-black text-xl text-zinc-900">1-on-1</div>
+                <div className="text-[9px] uppercase tracking-wider text-zinc-400 font-medium">Doubt Support</div>
               </div>
             </div>
-            {/* Inline formulas on mobile */}
-            <div className="flex flex-wrap gap-2 justify-center mt-6 md:hidden">
-              <div className="math-card dark text-xs rounded">∑(x+y)² = n</div>
-              <div className="math-card text-xs rounded">∫ f(x)dx</div>
-              <div className="math-card text-xs rounded">lim(x→∞)</div>
-              <div className="math-card dark text-xs rounded">e^(iπ) + 1 = 0</div>
+
+
             </div>
+
           </div>
         </div>
       </div>
