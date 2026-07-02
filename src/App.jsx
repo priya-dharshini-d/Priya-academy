@@ -145,67 +145,49 @@ function Hero() {
           <div className="absolute bottom-0 w-[80%] h-[60%] bg-white/60 backdrop-blur-3xl rounded-t-full -z-10"></div>
 
           {/* Card 1: Top Left */}
-          <div className="hidden sm:flex absolute top-[5%] md:top-[10%] left-0 md:left-6 bg-[#8b5cf6] w-[130px] h-[110px] md:w-[170px] md:h-[140px] p-3 md:p-5 rounded-2xl shadow-2xl z-20 text-white flex-col justify-center float-1">
-            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '24px' }}>functions</span>
-            <div className="font-bold text-xs md:text-sm leading-snug">Formula Sheets for Quick Revisions</div>
+          <div className="absolute flex top-[5%] md:top-[10%] left-[-15px] sm:left-0 md:left-6 bg-[#8b5cf6] w-[110px] h-[90px] sm:w-[170px] sm:h-[140px] p-2.5 sm:p-5 rounded-2xl shadow-2xl z-20 text-white flex-col justify-center float-1">
+            <span className="material-symbols-outlined mb-1 sm:mb-2 block text-xl sm:text-3xl">functions</span>
+            <div className="font-bold text-[9px] sm:text-xs md:text-sm leading-snug">Formula Sheets for Quick Revisions</div>
           </div>
 
           {/* Card 2: Top Right */}
-          <div className="hidden sm:flex absolute top-[2%] md:top-[5%] right-0 md:right-6 bg-[#ff8fa3] w-[130px] h-[110px] md:w-[170px] md:h-[140px] p-3 md:p-5 rounded-2xl shadow-2xl z-20 text-white flex-col justify-center float-2 rotate-2">
-            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '24px' }}>quiz</span>
-            <div className="font-bold text-xs md:text-sm leading-snug">Mock Tests</div>
+          <div className="absolute flex top-[2%] md:top-[5%] right-[-15px] sm:right-0 md:right-6 bg-[#ff8fa3] w-[110px] h-[90px] sm:w-[170px] sm:h-[140px] p-2.5 sm:p-5 rounded-2xl shadow-2xl z-20 text-white flex-col justify-center float-2 rotate-2">
+            <span className="material-symbols-outlined mb-1 sm:mb-2 block text-xl sm:text-3xl">quiz</span>
+            <div className="font-bold text-[9px] sm:text-xs md:text-sm leading-snug">Mock Tests</div>
           </div>
 
           {/* Card 3: Bottom Left */}
-          <div className="hidden sm:flex absolute top-[75%] md:top-[80%] left-4 md:left-10 bg-[#e14f6b] w-[130px] h-[110px] md:w-[170px] md:h-[140px] p-3 md:p-5 rounded-2xl shadow-2xl z-20 text-white flex-col justify-center float-3 -rotate-3">
-             <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '24px' }}>draw</span>
-             <div className="font-bold text-xs md:text-sm leading-snug">Handwritten Notes for All Chapters</div>
+          <div className="absolute flex top-[75%] md:top-[80%] left-[-10px] sm:left-4 md:left-10 bg-[#e14f6b] w-[110px] h-[90px] sm:w-[170px] sm:h-[140px] p-2.5 sm:p-5 rounded-2xl shadow-2xl z-20 text-white flex-col justify-center float-3 -rotate-3">
+             <span className="material-symbols-outlined mb-1 sm:mb-2 block text-xl sm:text-3xl">draw</span>
+             <div className="font-bold text-[9px] sm:text-xs md:text-sm leading-snug">Handwritten Notes for All Chapters</div>
           </div>
 
           {/* Card 4: Bottom Right */}
-          <div className="hidden sm:flex absolute top-[72%] md:top-[75%] right-0 md:right-10 bg-[#3b82f6] w-[130px] h-[110px] md:w-[170px] md:h-[140px] p-3 md:p-5 rounded-2xl shadow-2xl z-20 text-white flex-col justify-center float-4">
-            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '24px' }}>forum</span>
-            <div className="font-bold text-xs md:text-sm leading-snug">Live Doubt Solving Support</div>
+          <div className="absolute flex top-[72%] md:top-[75%] right-[-10px] sm:right-0 md:right-10 bg-[#3b82f6] w-[110px] h-[90px] sm:w-[170px] sm:h-[140px] p-2.5 sm:p-5 rounded-2xl shadow-2xl z-20 text-white flex-col justify-center float-4">
+            <span className="material-symbols-outlined mb-1 sm:mb-2 block text-xl sm:text-3xl">forum</span>
+            <div className="font-bold text-[9px] sm:text-xs md:text-sm leading-snug">Live Doubt Solving Support</div>
           </div>
 
-          {/* Card 5: Middle Left - hidden on small screens */}
-          <div className="hidden md:flex absolute top-[45%] -left-8 lg:-left-24 bg-[#10b981] w-[140px] h-[120px] lg:w-[160px] lg:h-[140px] p-4 lg:p-5 rounded-2xl shadow-xl z-20 text-white flex-col justify-center float-2 -rotate-2">
-            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '24px' }}>hub</span>
-            <div className="font-bold text-xs md:text-sm leading-snug">Mind Maps for All Chapters</div>
+          {/* Card 5: Middle Left */}
+          <div className="absolute flex top-[40%] md:top-[45%] left-[-25px] sm:-left-8 lg:-left-24 bg-[#10b981] w-[110px] h-[90px] sm:w-[160px] sm:h-[140px] p-2.5 sm:p-5 rounded-2xl shadow-xl z-20 text-white flex-col justify-center float-2 -rotate-2">
+            <span className="material-symbols-outlined mb-1 sm:mb-2 block text-xl sm:text-3xl">hub</span>
+            <div className="font-bold text-[9px] sm:text-xs md:text-sm leading-snug">Mind Maps for All Chapters</div>
           </div>
 
-          {/* Card 6: Middle Right - hidden on small screens */}
-          <div className="hidden md:flex absolute top-[40%] -right-4 lg:-right-24 bg-[#f59e0b] w-[140px] h-[120px] lg:w-[160px] lg:h-[140px] p-4 lg:p-5 rounded-2xl shadow-xl z-20 text-white flex-col justify-center float-1 rotate-3">
-            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '24px' }}>menu_book</span>
-            <div className="font-bold text-xs md:text-sm leading-snug">Comprehensive Study Materials</div>
+          {/* Card 6: Middle Right */}
+          <div className="absolute flex top-[37%] md:top-[40%] right-[-25px] sm:-right-4 lg:-right-24 bg-[#f59e0b] w-[110px] h-[90px] sm:w-[160px] sm:h-[140px] p-2.5 sm:p-5 rounded-2xl shadow-xl z-20 text-white flex-col justify-center float-1 rotate-3">
+            <span className="material-symbols-outlined mb-1 sm:mb-2 block text-xl sm:text-3xl">menu_book</span>
+            <div className="font-bold text-[9px] sm:text-xs md:text-sm leading-snug">Comprehensive Study Materials</div>
           </div>
 
         </div>
-
-        {/* Mobile & Tablet Feature Grid (Visible only on mobile/small screens) */}
-        <div className="grid grid-cols-2 gap-3 mt-8 w-full max-w-lg sm:hidden relative z-20 px-4">
-          {[
-            { text: "Formula Sheets for Quick Revisions", icon: "functions", bg: "bg-[#8b5cf6]" },
-            { text: "Mock Tests", icon: "quiz", bg: "bg-[#ff8fa3]" },
-            { text: "Handwritten Notes for All Chapters", icon: "draw", bg: "bg-[#e14f6b]" },
-            { text: "Live Doubt Solving Support", icon: "forum", bg: "bg-[#3b82f6]" },
-            { text: "Mind Maps for All Chapters", icon: "hub", bg: "bg-[#10b981]" },
-            { text: "Comprehensive Study Materials", icon: "menu_book", bg: "bg-[#f59e0b]" }
-          ].map((card) => (
-            <div key={card.text} className={`${card.bg} text-white p-4 rounded-xl shadow-lg flex flex-col justify-center min-h-[96px]`}>
-              <span className="material-symbols-outlined mb-1 block" style={{ fontSize: '20px' }}>{card.icon}</span>
-              <div className="font-bold text-[10px] leading-snug">{card.text}</div>
-            </div>
-          ))}
-        </div>
-
       </div>
 
       {/* Grid Pattern Background */}
       <div className="absolute inset-0 opacity-[0.05] z-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)", backgroundSize: "60px 60px" }}></div>
 
       {/* Decorative Math Elements (Left) */}
-      <svg viewBox="0 0 100 100" className="hidden lg:block absolute top-[15%] left-[8%] w-32 h-auto animate-float drop-shadow-xl opacity-40" style={{ '--rotation': '140deg' }}>
+      <svg viewBox="0 0 100 100" className="absolute top-[18%] left-[4%] w-16 md:w-32 h-auto animate-float drop-shadow-xl opacity-35" style={{ '--rotation': '140deg' }}>
         <path d="M10,90 L90,90 L10,10 Z M25,75 L25,35 L65,75 Z" fill="#3b82f6" fillRule="evenodd" />
         <line x1="20" y1="90" x2="20" y2="84" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" />
         <line x1="30" y1="90" x2="30" y2="84" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" />
@@ -220,7 +202,7 @@ function Hero() {
         <line x1="10" y1="40" x2="16" y2="40" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" />
         <line x1="10" y1="30" x2="16" y2="30" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" />
       </svg>
-      <svg viewBox="0 0 100 100" className="hidden lg:block absolute top-[30%] left-[12%] w-28 h-auto animate-float-slow drop-shadow-xl opacity-40" style={{ '--rotation': '-10deg' }}>
+      <svg viewBox="0 0 100 100" className="absolute top-[28%] left-[8%] w-14 md:w-28 h-auto animate-float-slow drop-shadow-xl opacity-35" style={{ '--rotation': '-10deg' }}>
         {/* Frame */}
         <rect x="10" y="10" width="80" height="80" rx="6" fill="none" stroke="#8b5cf6" strokeWidth="8" />
 
@@ -268,7 +250,7 @@ function Hero() {
       </svg>
 
       {/* Decorative Math Elements (Right) */}
-      <svg viewBox="0 0 100 100" className="hidden lg:block absolute top-[15%] right-[10%] w-36 h-auto animate-float-delayed drop-shadow-xl opacity-40" style={{ '--rotation': '-10deg' }}>
+      <svg viewBox="0 0 100 100" className="absolute top-[18%] right-[4%] w-18 md:w-36 h-auto animate-float-delayed drop-shadow-xl opacity-35" style={{ '--rotation': '-10deg' }}>
         <path d="M10 70 A 40 40 0 0 1 90 70 Z" fill="#10b981" opacity="0.9" />
         <path d="M30 70 A 20 20 0 0 1 70 70 Z" fill="none" stroke="#fff" strokeWidth="3" />
         <line x1="15" y1="70" x2="22" y2="70" stroke="#fff" strokeWidth="2" />
@@ -277,7 +259,7 @@ function Hero() {
         <line x1="25.2" y1="45.2" x2="30.2" y2="50.2" stroke="#fff" strokeWidth="2" />
         <line x1="74.8" y1="45.2" x2="69.8" y2="50.2" stroke="#fff" strokeWidth="2" />
       </svg>
-      <svg viewBox="0 0 100 100" className="hidden lg:block absolute top-[30%] right-[15%] w-32 h-auto animate-float drop-shadow-xl opacity-40" style={{ '--rotation': '25deg' }}>
+      <svg viewBox="0 0 100 100" className="absolute top-[28%] right-[8%] w-16 md:w-32 h-auto animate-float drop-shadow-xl opacity-35" style={{ '--rotation': '25deg' }}>
         <rect x="10" y="35" width="80" height="18" rx="2" fill="#f59e0b" transform="rotate(-15 50 50)" />
         <line x1="15" y1="35" x2="15" y2="42" stroke="#b45309" strokeWidth="2" transform="rotate(-15 50 50)" />
         <line x1="30" y1="35" x2="30" y2="42" stroke="#b45309" strokeWidth="2" transform="rotate(-15 50 50)" />
