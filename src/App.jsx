@@ -172,6 +172,24 @@ function Hero() {
           </div>
 
         </div>
+
+        {/* Mobile & Tablet Feature Grid (Visible only on mobile/small screens) */}
+        <div className="grid grid-cols-2 gap-3 mt-8 w-full max-w-lg sm:hidden relative z-20 px-4">
+          {[
+            { text: "Formula Sheets for Quick Revisions", icon: "functions", bg: "bg-[#8b5cf6]" },
+            { text: "Mock Tests", icon: "quiz", bg: "bg-[#ff8fa3]" },
+            { text: "Handwritten Notes for All Chapters", icon: "draw", bg: "bg-[#e14f6b]" },
+            { text: "Live Doubt Solving Support", icon: "forum", bg: "bg-[#3b82f6]" },
+            { text: "Mind Maps for All Chapters", icon: "hub", bg: "bg-[#10b981]" },
+            { text: "Comprehensive Study Materials", icon: "menu_book", bg: "bg-[#f59e0b]" }
+          ].map((card) => (
+            <div key={card.text} className={`${card.bg} text-white p-4 rounded-xl shadow-lg flex flex-col justify-center min-h-[96px]`}>
+              <span className="material-symbols-outlined mb-1 block" style={{ fontSize: '20px' }}>{card.icon}</span>
+              <div className="font-bold text-[10px] leading-snug">{card.text}</div>
+            </div>
+          ))}
+        </div>
+
       </div>
 
       {/* Grid Pattern Background */}
@@ -542,7 +560,7 @@ function Demo() {
           </form>
 
           {/* Floating Video Panel */}
-          <div className="flex items-center justify-center mt-8 md:mt-0">
+          <div className="flex flex-col items-center justify-center mt-8 md:mt-0">
             <div className="relative w-full aspect-square max-w-sm">
               <video
                 src="/hero_video.mp4"
@@ -565,6 +583,13 @@ function Demo() {
               <div className="hidden md:block absolute bottom-[-10px] left-10 math-float-1" style={{ animationDelay: '-7s' }}>
                 <div className="math-card dark shadow-2xl">e^(iπ) + 1 = 0</div>
               </div>
+            </div>
+            {/* Inline formulas on mobile */}
+            <div className="flex flex-wrap gap-2 justify-center mt-6 md:hidden">
+              <div className="math-card dark text-xs rounded">∑(x+y)² = n</div>
+              <div className="math-card text-xs rounded">∫ f(x)dx</div>
+              <div className="math-card text-xs rounded">lim(x→∞)</div>
+              <div className="math-card dark text-xs rounded">e^(iπ) + 1 = 0</div>
             </div>
           </div>
         </div>
