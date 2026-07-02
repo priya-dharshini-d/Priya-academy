@@ -57,12 +57,21 @@ function Nav({ setView }) {
 
       {/* Mobile Menu Overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 bg-black/30 lg:hidden" onClick={() => setMobileOpen(false)} />
+        <div className="fixed inset-0 z-[60] bg-black/30 lg:hidden" onClick={() => setMobileOpen(false)} />
       )}
 
       {/* Mobile Menu Drawer */}
-      <div className={`fixed top-0 right-0 z-[45] h-full w-72 bg-white shadow-2xl transform transition-transform duration-300 lg:hidden ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="pt-20 px-6 flex flex-col gap-1">
+      <div className={`fixed top-0 right-0 z-[70] h-full w-72 bg-white shadow-2xl transform transition-transform duration-300 lg:hidden ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="p-6 flex flex-col gap-1 relative h-full">
+          {/* Close button inside drawer */}
+          <button
+            className="self-end p-2 mb-4 hover:opacity-75 transition-opacity"
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close menu"
+          >
+            <span className="material-symbols-outlined text-zinc-900" style={{ fontSize: '28px' }}>close</span>
+          </button>
+
           {navLinks.map((l) => (
             <a
               key={l.name}
@@ -76,7 +85,7 @@ function Nav({ setView }) {
           <a
             href="#demo"
             onClick={() => setMobileOpen(false)}
-            className="mt-4 bg-zinc-900 text-white px-5 py-3 text-xs font-bold uppercase tracking-widest hover:bg-zinc-700 transition-colors text-center"
+            className="mt-6 bg-zinc-900 text-white px-5 py-3 text-xs font-bold uppercase tracking-widest hover:bg-zinc-700 transition-colors text-center"
           >
             Book Demo
           </a>
@@ -102,9 +111,9 @@ function Hero() {
         .float-4 { animation: float 4.5s ease-in-out infinite; }
         
         .hero-title {
-          font-family: 'Impact', 'Arial Black', sans-serif;
-          transform: scaleY(1.2);
-          letter-spacing: 0.02em;
+          font-family: 'Anton', 'Impact', 'Arial Black', sans-serif;
+          transform: scaleY(1.25);
+          letter-spacing: 0.03em;
         }
       `}</style>
 
