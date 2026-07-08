@@ -409,8 +409,10 @@ function Courses({ setView }) {
   return (
     <section id="courses" className="py-24 bg-white border-t border-zinc-200">
       <div className="max-w-[1280px] mx-auto px-8 md:px-16">
-        <h2 className="font-sans font-black text-zinc-900 text-3xl mb-3">Tailored Math Programs</h2>
-        <p className="text-sm text-zinc-500 mb-12 leading-relaxed">Selected courses designed for absolute clarity and board exam excellence.</p>
+        <div className="text-center mb-12">
+          <h2 className="font-serif font-bold text-zinc-900 text-2xl mb-3">Tailored Math Programs</h2>
+          <p className="text-sm text-zinc-500 leading-relaxed mx-auto">Selected courses designed for absolute clarity and board exam excellence.</p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map(({ tag, title, features, img, duration }) => (
