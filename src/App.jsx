@@ -158,8 +158,8 @@ function Hero() {
 
           {/* Card 3: Bottom Left */}
           <div className="hidden sm:flex absolute top-[75%] md:top-[80%] left-4 md:left-10 bg-[#e14f6b] w-[130px] h-[110px] md:w-[170px] md:h-[140px] p-3 md:p-5 rounded-2xl shadow-2xl z-20 text-white flex-col justify-center float-3 -rotate-3">
-             <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '24px' }}>draw</span>
-             <div className="font-bold text-xs md:text-sm leading-snug">Handwritten Notes for All Chapters</div>
+            <span className="material-symbols-outlined mb-2 block" style={{ fontSize: '24px' }}>draw</span>
+            <div className="font-bold text-xs md:text-sm leading-snug">Handwritten Notes for All Chapters</div>
           </div>
 
           {/* Card 4: Bottom Right */}
@@ -300,11 +300,11 @@ function Hero() {
 /* ─── Methodology ───────────────────────────────────────── */
 function Methodology() {
   const steps = [
-    { n: "1", title: "LEARN",    desc: "Concept video lectures and live interactive sessions.",  color: "#8b5cf6" },
-    { n: "2", title: "PRACTICE", desc: "Graded assignment sheets from NCERT to Exemplar.",       color: "#3b82f6" },
-    { n: "3", title: "TEST",     desc: "Bi-weekly subjective and objective mock tests.",          color: "#10b981" },
-    { n: "4", title: "ANALYZE",  desc: "AI-generated error analysis report for each test.",      color: "#f59e0b" },
-    { n: "5", title: "IMPROVE",  desc: "Remedial sessions to bridge identified knowledge gaps.", color: "#e14f6b" },
+    { n: "1", title: "LEARN", desc: "Concept video lectures and live interactive sessions.", color: "#8b5cf6" },
+    { n: "2", title: "PRACTICE", desc: "Graded assignment sheets from NCERT to Exemplar.", color: "#3b82f6" },
+    { n: "3", title: "TEST", desc: "Bi-weekly subjective and objective mock tests.", color: "#10b981" },
+    { n: "4", title: "ANALYZE", desc: "AI-generated error analysis report for each test.", color: "#f59e0b" },
+    { n: "5", title: "IMPROVE", desc: "Remedial sessions to bridge identified knowledge gaps.", color: "#e14f6b" },
   ];
   return (
     <section id="methodology" className="py-24 bg-white border-t border-zinc-100">
@@ -335,121 +335,118 @@ function Methodology() {
   );
 }
 
-/* ─── Core Curriculum ───────────────────────────────────── */
-function CoreCurriculum({ setView }) {
-  const modules = [
-    {
-      title: "Real Numbers & Polynomials",
-      desc: "The architecture of motion and change. Deep dive into multivariate systems.",
-      img: "/course_real_numbers_v2.png",
-      weeks: "10 Weeks",
-      level: "Mastery",
-    },
-    {
-      title: "Trigonometry & Applications",
-      desc: "Understanding the fabric of reality through probability and wave functions.",
-      img: "/course_trigonometry_v2.png",
-      weeks: "12 Weeks",
-      level: "Mastery",
-    },
-    {
-      title: "Surface Areas & Volumes",
-      desc: "Crafting logic structures that power the next generation of digital intelligence.",
-      img: "/course_surface_areas.png",
-      weeks: "8 Weeks",
-      level: "Foundation",
-    },
-  ];
-  return (
-    <section id="courses" className="py-20 bg-white border-t border-zinc-200">
-      <div className="max-w-[1280px] mx-auto px-8 md:px-16">
-        <div className="flex items-start justify-between mb-3">
-          <h2 className="font-sans font-black text-zinc-900 text-3xl">Core Curriculum</h2>
-          <button onClick={(e) => { e.preventDefault(); setView('catalog'); }} className="hidden md:block text-[10px] font-bold text-zinc-900 uppercase tracking-widest border-b border-zinc-900 pb-0.5 hover:opacity-50 transition-opacity mt-1.5">
-            View Full Catalog
-          </button>
-        </div>
-        <p className="text-sm text-zinc-500 mb-12 max-w-sm leading-relaxed">Selected modules designed for the modern intellectual. Sharp focus, zero fluff.</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {modules.map(({ title, desc, img, weeks, level }) => (
-            <div key={title} className="group cursor-pointer">
-              <div className="overflow-hidden mb-5 rounded-xl">
-                <img src={img} alt={title} className="w-full h-auto group-hover:scale-105 transition-transform duration-700" />
-              </div>
-              <h3 className="font-sans font-black text-zinc-900 text-lg leading-snug mb-2">{title}</h3>
-              <p className="text-sm text-zinc-500 leading-relaxed mb-4">{desc}</p>
-              <div className="flex items-center gap-2">
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 bg-zinc-100 text-zinc-600">{weeks}</span>
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-zinc-300 text-zinc-600">{level}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ─── Courses ──────────────────────────────────────────── */
 function Courses({ setView }) {
   const courses = [
     {
-      tag: "Standard Syllabus",
+      tag: "CBSE Syllabus",
       title: "CBSE Class 10 Maths",
-      items: ["Complete NCERT + RS Aggarwal", "10 Years Sample Papers", "Daily Homework Support"],
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-Q04A_bfAUSbvxfl9bFACaiRfES1KKY9jk-i-TKdOTUfkrzaVN2Qdt56fbuMTbt3LEhsfLk9bcq-qUG3KTNTtUsHOWz8NIf9Bi21AkEWNfXL83o2bU0hffvlXCdGXp1w3QT71qKe1V2NsmxFYn2kmEdIUT6ehOkcdPedKcK2xRnr0NIzp-dXGrGXbRtCRDZ8p6Pd4eELjoZTPKnPHZokFkd1gIFu2xe2GPL4h600LKlJ5g8fkk_nNnl4yPOSAkf-pLNVogeqslDWQ",
+      features: [
+        "Complete NCERT + RS Aggarwal",
+        "10 Years Solved Board Papers",
+        "Daily Worksheet Homework Support"
+      ],
+      img: "/cbse_math_10_textbook.png",
       duration: "12 Months",
     },
     {
-      tag: "Advanced Concepts",
+      tag: "CBSE Syllabus",
+      title: "CBSE Class 11 Maths",
+      features: [
+        "Sets, Relations & Trigonometry Focus",
+        "Limits, Derivatives & RD Sharma",
+        "Weekly Practice Assignments"
+      ],
+      img: "/cbse_math_11_textbook.png",
+      duration: "12 Months",
+    },
+    {
+      tag: "CBSE Syllabus",
       title: "CBSE Class 12 Maths",
-      items: ["Calculus & Algebra Specialization", "JEE Foundation Module", "Mock Exam Series"],
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCYPUqNQc2I0OiD69n3JEfRB7pI0Fyneghx4iXKPmh4Lhu-KfBiQmU0Tr-zZaTdoWIggHYpPPAqLLk1Fl6SfZWeEwdT96qm263K3q7XfazLHIIHXvK7Tz5AY2gCHtY35wic_buU0_XLvGHdq_p3lW2PG2PMffyp_U_8HoPjouA-iEbgmBSSXLMMuD2M_HkUUDxO_ImtMqkz84UVeUBh-Cax9zPpBwVUIZN3BPGxUn7pMqb8y89kGgZ95t9leYzYv3JABzQBz0UUtxBo",
+      features: [
+        "Calculus & Algebra Specialization",
+        "JEE Foundation Modules",
+        "Mock Exam Series & Evaluation"
+      ],
+      img: "/cbse_math_12_textbook.png",
       duration: "12 Months",
     },
     {
-      tag: "Crash Course",
-      title: "Board Exam Bootcamp",
-      items: ["10-week intensive revision", "Previous 5-year papers solved", "Doubt sessions 6 days/week"],
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAcRMcYl-Wk6wVZ-q-SW9GzKhXajskt7TY_L6tJ2bOllu0Hco7lvkufSoZcaGMt1F-wljFZG_0O2eBZNenpGunYwJikWdAZ4w7GmoWQ13eZAvvPFfYIad68OYGcCswEbyE-m4VDoG-ZPBRVMJt12LTsFB41Uum7VT7pWmOGAz7hlGeYHLjU5zYJXm9ekq3DfBBX8pyBTKin3rLE2S1LUw2Y_sZaRGTex3Rkad41JagxI2NucOtWd2IQwqx3W0l3Yh2hq-ioetWzmbHU",
-      duration: "10 Weeks",
+      tag: "State Board",
+      title: "State Board Class 10 Maths",
+      features: [
+        "Samacheer Kalvi Syllabus coverage",
+        "Detailed Concept Lectures",
+        "10-Year Question Bank Solutions"
+      ],
+      img: "/tn_math_10_textbook.png",
+      duration: "12 Months",
+    },
+    {
+      tag: "State Board",
+      title: "State Board Class 11 Maths",
+      features: [
+        "Matrices, Algebra & Calculus basic",
+        "Daily Homework Problem Sheets",
+        "Chapter-wise Revision Sessions"
+      ],
+      img: "/tn_math_11_textbook.png",
+      duration: "12 Months",
+    },
+    {
+      tag: "State Board",
+      title: "State Board Class 12 Maths",
+      features: [
+        "Probability & Vector Specialization",
+        "Target Board Centum Module",
+        "Grand Revision Mock Exam Series"
+      ],
+      img: "/tn_math_12_textbook.png",
+      duration: "12 Months",
     },
   ];
+
   return (
-    <section className="py-24 bg-white border-t border-zinc-200">
+    <section id="courses" className="py-24 bg-white border-t border-zinc-200">
       <div className="max-w-[1280px] mx-auto px-8 md:px-16">
-        <div className="flex items-end justify-between mb-14">
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.15em] font-medium text-zinc-400 mb-3">Enroll Now</p>
-            <h2 className="font-serif font-black text-zinc-900" style={{ fontSize: "clamp(28px, 4vw, 48px)" }}>
-              Tailored Math <em>Programs</em>
-            </h2>
-          </div>
-          <button onClick={(e) => { e.preventDefault(); setView('catalog'); }} className="hidden md:block text-[10px] uppercase tracking-widest text-zinc-400 hover:text-zinc-900 transition-colors">View Full Syllabus →</button>
+        <div className="flex items-start justify-between mb-3">
+          <h2 className="font-sans font-black text-zinc-900 text-3xl">Tailored Math Programs</h2>
+          <button onClick={(e) => { e.preventDefault(); setView('catalog'); }} className="hidden md:block text-[10px] font-bold text-zinc-900 uppercase tracking-widest border-b border-zinc-900 pb-0.5 hover:opacity-50 transition-opacity mt-1.5">
+            View Full Catalog
+          </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {courses.map(({ tag, title, items, img, duration }) => (
-            <div key={title} className="group bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-lg transition-all duration-300 flex flex-col cursor-pointer">
-              <div className="overflow-hidden">
-                <img src={img} alt={title} className="w-full h-auto group-hover:scale-105 transition-transform duration-700" />
+        <p className="text-sm text-zinc-500 mb-12 leading-relaxed">Selected courses designed for absolute clarity and board exam excellence.</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {courses.map(({ tag, title, features, img, duration }) => (
+            <div key={title} className="group border border-zinc-200 overflow-hidden bg-white hover:shadow-xl transition-all duration-300 flex flex-col">
+              <div className="overflow-hidden aspect-[4/3] w-full">
+                <img src={img} alt={title} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 grayscale-[20%]" />
               </div>
-              <div className="flex flex-col flex-1 p-6">
-                <p className="text-[10px] uppercase tracking-[0.15em] font-medium text-zinc-400 mb-2">{tag}</p>
-                <h3 className="font-serif font-bold text-zinc-900 text-lg mb-4 leading-snug">{title}</h3>
-                <ul className="space-y-2 mb-6 flex-1">
-                  {items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-zinc-500 leading-relaxed">
-                      <span className="material-symbols-outlined text-zinc-900 flex-shrink-0" style={{ fontSize: "15px", marginTop: "2px" }}>check</span>
-                      {item}
+
+              <div className="p-6 flex flex-col flex-1">
+                <div className="text-[10px] uppercase tracking-widest font-semibold text-zinc-400 mb-2">{tag}</div>
+                <h3 className="font-serif font-bold text-zinc-900 text-xl leading-snug mb-5">{title}</h3>
+
+                <ul className="space-y-3 mb-6">
+                  {features.map((feat) => (
+                    <li key={feat} className="flex items-start gap-2.5 text-xs text-zinc-500 leading-tight">
+                      <span className="material-symbols-outlined text-sm text-zinc-800 font-bold shrink-0">check</span>
+                      <span>{feat}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="flex items-center justify-between border-t border-zinc-200 pt-5 mt-auto">
+
+                <hr className="border-zinc-100 my-5 mt-auto" />
+
+                <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-[10px] uppercase tracking-widest text-zinc-400 mb-1">Duration</div>
-                    <div className="font-semibold text-sm text-zinc-900">{duration}</div>
+                    <div className="text-[9px] uppercase tracking-widest text-zinc-400 font-semibold mb-0.5">Duration</div>
+                    <div className="text-xs font-black text-zinc-900">{duration}</div>
                   </div>
-                  <button className="border border-zinc-900 text-zinc-900 text-xs font-bold uppercase tracking-wider px-5 py-2 hover:bg-zinc-900 hover:text-white transition-colors">Enroll Now</button>
+                  <a href="#demo" className="border border-zinc-900 text-zinc-900 px-5 py-2.5 text-[10px] font-bold uppercase tracking-widest hover:bg-zinc-900 hover:text-white transition-all duration-300">
+                    Enroll Now
+                  </a>
                 </div>
               </div>
             </div>
@@ -459,7 +456,6 @@ function Courses({ setView }) {
     </section>
   );
 }
-
 /* ─── Testimonials ─────────────────────────────────────── */
 function Testimonials() {
   const list = [
@@ -517,13 +513,13 @@ function Demo() {
   return (
     <section id="demo" className="py-24 bg-white border-t border-zinc-200">
       <div className="max-w-[1280px] mx-auto px-8 md:px-16">
-        <div className="mb-10">
-          <h2 className="font-sans font-black text-zinc-900 text-3xl md:text-4xl mb-2">Secure Your Legacy.</h2>
-          <p className="text-sm text-zinc-500 leading-relaxed max-w-xs">
-            Schedule a private consultation and tour of our digital ecosystem. Admission is selective.
+        <div className="mb-10 text-center">
+          <h2 className="font-sans font-black text-zinc-900 text-3xl md:text-4xl mb-2">Secure Your Legacy</h2>
+          <p className="text-sm text-zinc-500 leading-relaxed mx-auto">
+            Schedule a private consultation and tour of our digital ecosystem.
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="max-w-2xl mx-auto">
           {/* Form */}
           <form className="space-y-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -539,13 +535,14 @@ function Demo() {
             <div>
               <label className="block text-[10px] uppercase tracking-widest font-medium text-zinc-400 mb-1.5">Interest</label>
               <select className="w-full border border-zinc-300 px-3 py-2.5 text-sm text-zinc-900 focus:border-zinc-900 outline-none bg-white transition-colors">
-                <option>Algebra &amp; Number Systems</option>
-                <option>Trigonometry &amp; Applications</option>
-                <option>Surface Areas &amp; Volumes</option>
-                <option>Calculus &amp; Differentiation</option>
+
                 <option>CBSE Class 10 Full Course</option>
+                <option>CBSE Class 11 Full Course</option>
                 <option>CBSE Class 12 Full Course</option>
-                <option>Board Exam Bootcamp</option>
+                <option>STATE BOARD Class 10 Full Course</option>
+                <option>STATE BOARD Class 11 Full Course</option>
+                <option>STATE BOARD Class 12 Full Course</option>
+
               </select>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -566,63 +563,6 @@ function Demo() {
               Submit Application
             </button>
           </form>
-
-          {/* Quick Contact & Academy Highlights Panel */}
-          <div className="space-y-8 lg:pl-6">
-            
-
-            {/* Highlights Box */}
-            <div className="space-y-4">
-              <h3 className="font-serif font-bold text-zinc-900 text-lg mb-4">Why Choose Priya's Academy?</h3>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-4 border border-zinc-200 rounded-xl space-y-2">
-                  <span className="material-symbols-outlined text-2xl text-[#8b5cf6]">groups</span>
-                  <h4 className="font-bold text-xs text-zinc-900 uppercase tracking-wider">Small Batches</h4>
-                  <p className="text-[11px] text-zinc-500 leading-normal">Maximum 20 students per batch to ensure dedicated personal attention.</p>
-                </div>
-
-                <div className="p-4 border border-zinc-200 rounded-xl space-y-2">
-                  <span className="material-symbols-outlined text-2xl text-[#3b82f6]">emoji_events</span>
-                  <h4 className="font-bold text-xs text-zinc-900 uppercase tracking-wider">Top Board Results</h4>
-                  <p className="text-[11px] text-zinc-500 leading-normal">Proven exam strategies to target centum (100/100) scores in CBSE boards.</p>
-                </div>
-
-                <div className="p-4 border border-zinc-200 rounded-xl space-y-2">
-                  <span className="material-symbols-outlined text-2xl text-[#10b981]">article</span>
-                  <h4 className="font-bold text-xs text-zinc-900 uppercase tracking-wider">NCERT to Exemplar</h4>
-                  <p className="text-[11px] text-zinc-500 leading-normal">Comprehensive worksheets covering every board textbook question.</p>
-                </div>
-
-                <div className="p-4 border border-zinc-200 rounded-xl space-y-2">
-                  <span className="material-symbols-outlined text-2xl text-[#f59e0b]">trending_up</span>
-                  <h4 className="font-bold text-xs text-zinc-900 uppercase tracking-wider">Parents Dashboard</h4>
-                  <p className="text-[11px] text-zinc-500 leading-normal">Regular diagnostic progress reports and metrics shared with parents.</p>
-                </div>
-              </div>
-
-            {/* Quick Stats Banner */}
-            <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-4 flex justify-around text-center">
-              <div>
-                <div className="font-sans font-black text-xl text-zinc-900">95%+</div>
-                <div className="text-[9px] uppercase tracking-wider text-zinc-400 font-medium">Board Success</div>
-              </div>
-              <div className="border-r border-zinc-200 h-8 self-center"></div>
-              <div>
-                <div className="font-sans font-black text-xl text-zinc-900">200+</div>
-                <div className="text-[9px] uppercase tracking-wider text-zinc-400 font-medium">Mind Maps</div>
-              </div>
-              <div className="border-r border-zinc-200 h-8 self-center"></div>
-              <div>
-                <div className="font-sans font-black text-xl text-zinc-900">1-on-1</div>
-                <div className="text-[9px] uppercase tracking-wider text-zinc-400 font-medium">Doubt Support</div>
-              </div>
-            </div>
-
-
-            </div>
-
-          </div>
         </div>
       </div>
     </section>
@@ -727,7 +667,6 @@ export default function App() {
         <>
           <Hero />
           <Methodology />
-          <CoreCurriculum setView={setCurrentView} />
           <Courses setView={setCurrentView} />
           <Testimonials />
           <Demo />
