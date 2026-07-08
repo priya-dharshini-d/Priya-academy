@@ -409,12 +409,7 @@ function Courses({ setView }) {
   return (
     <section id="courses" className="py-24 bg-white border-t border-zinc-200">
       <div className="max-w-[1280px] mx-auto px-8 md:px-16">
-        <div className="flex items-start justify-between mb-3">
-          <h2 className="font-sans font-black text-zinc-900 text-3xl">Tailored Math Programs</h2>
-          <button onClick={(e) => { e.preventDefault(); setView('catalog'); }} className="hidden md:block text-[10px] font-bold text-zinc-900 uppercase tracking-widest border-b border-zinc-900 pb-0.5 hover:opacity-50 transition-opacity mt-1.5">
-            View Full Catalog
-          </button>
-        </div>
+        <h2 className="font-sans font-black text-zinc-900 text-3xl mb-3">Tailored Math Programs</h2>
         <p className="text-sm text-zinc-500 mb-12 leading-relaxed">Selected courses designed for absolute clarity and board exam excellence.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
